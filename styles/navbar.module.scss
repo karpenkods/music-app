@@ -1,0 +1,37 @@
+@import './fonts/fonts.scss';
+
+.navbar {
+  display: flex;
+
+  &__link {
+    text-decoration: none;
+    text-transform: none;
+    &:active {
+      color: inherit;
+    }
+  }
+
+  &__heading {
+    font-family: 'marckScript';
+    font-weight: 500;
+    font-size: 48px;
+  }
+
+  &__btn {
+    width: 150px;
+    height: 30px;
+    text-transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    &__heading {
+      font-size: 24px;
+    }
+
+    &__btn {
+      height: 50px;
+    }
+  }
+}

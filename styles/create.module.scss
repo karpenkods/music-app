@@ -1,0 +1,135 @@
+.create {
+  margin: 0 auto;
+  display: flex;
+  height: 100vh;
+  padding: 100px 0;
+  flex-direction: column;
+  align-items: center;
+
+  &__headerBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  &__btnExit {
+    padding: 0;
+    position: absolute;
+    top: 3%;
+    left: 93%;
+  }
+
+  &__nameBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__btnBlock {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    width: 100px;
+    height: 30px;
+    text-transform: none;
+  }
+
+  &__form {
+    width: 40vw;
+  }
+
+  &__cover {
+    margin-bottom: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__coverName {
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__btnModalL {
+    height: 30px;
+    width: fit-content;
+    text-transform: none;
+  }
+
+  &__btnModalR {
+    height: 30px;
+    width: fit-content;
+    margin-left: 50px;
+    text-transform: none;
+  }
+}
+
+.step {
+  width: 50vw;
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 8px 16px 16px 16px;
+  }
+}
+
+.textfield {
+  position: relative;
+  color: #757575;
+}
+
+.nameHelp {
+  position: absolute;
+  top: 75%;
+  left: 0;
+}
+
+.label {
+  color: #bdbdbd;
+}
+
+@media (max-width: 768px) {
+  .create {
+    &__btnExit {
+      left: 88%;
+    }
+
+    &__btnBlock {
+      width: 78%;
+    }
+
+    &__form {
+      width: 90vw;
+      padding: 0 30px;
+    }
+
+    &__titleMobile {
+      margin-top: 40px;
+    }
+
+    &__btnModalR {
+      margin-left: 0;
+    }
+  }
+  .step {
+    width: 90vw;
+  }
+}

@@ -1,0 +1,228 @@
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  margin-top: 120px;
+  overflow-x: hidden;
+}
+
+.relative::-webkit-scrollbar {
+  width: 7px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.relative::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #aa00ff;
+}
+
+.relative_light::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #424242;
+}
+
+.relative::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.tracks {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  height: 100vh;
+  padding: 80px 0 20px 0;
+  flex-direction: column;
+  align-items: center;
+
+  &__headerBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 52vw;
+  }
+
+  &__title {
+    margin-right: 20px;
+    font-size: 36px;
+    font-weight: 600;
+  }
+
+  &__btn {
+    width: fit-content;
+    height: 30px;
+    text-transform: none;
+  }
+
+  &__contentBlock {
+    margin-right: 15px;
+  }
+
+  &__description_one {
+    text-align: center;
+    width: 50%;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  &__description_two {
+    text-align: center;
+    width: 70%;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  &__searchBlock {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+    height: 30px;
+    width: auto;
+    padding: 3.2px 3.2px 3.2px 0px;
+    padding-left: calc(1em + 32px);
+  }
+
+  &__search {
+    margin-left: 8px;
+    width: 12ch;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    color: #fafafa;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+    &::placeholder {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+    }
+    &:focus {
+      width: 20ch;
+    }
+  }
+  
+  &__search_light {
+    color: #212121;
+  }
+
+  &__noComment {
+    margin-top: 60px;
+  }
+}
+
+.track {
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  margin-bottom: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+  &__index {
+    margin-bottom: 0;
+  }
+
+  &__active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(213, 0, 0, 0.5) 0px 0px 10px 5px inset;
+  }
+
+  &__info {
+    padding: 0 15px 0 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__contentMobile {
+    max-width: 380px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__media {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  &__infoBlock {
+    height: 100%;
+    padding: 8px 8px 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__moreBtn {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .relative {
+    margin-top: 220px;
+  }
+
+  .tracks {
+    &__headerBlock {
+      width: 90vw;
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+
+    &__mobile {
+      flex-direction: column;
+    }
+
+    &__title {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    &__btn {
+      margin-top: 15px;
+      height: 45px;
+    }
+  }
+
+  .track {
+    width: 90vw;
+
+    &__info {
+      padding: 0;
+    }
+
+    &__contentMobile {
+      font-size: 16px;
+      width: 100px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

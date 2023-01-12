@@ -1,0 +1,94 @@
+@import './fonts/fonts.scss';
+
+.player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-radius: 15px;
+  position: absolute;
+  left: 15%;
+  top: 80%;
+  cursor: grab;
+
+  &__drop {
+    cursor: default;
+  }
+
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px;
+  }
+
+  &__control {
+    display: flex;
+  }
+
+  &__count {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__track {
+    height: 100%;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__trackName {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__progress {
+    margin-right: 20px;
+  }
+
+  &__volume {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .player {
+    margin: 0 30px;
+    width: 60%;
+    flex-direction: column;
+    left: 0;
+    top: 30%;
+
+    &__control {
+      margin-right: 20px;
+    }
+
+    &__controls {
+      flex-direction: row;
+      margin-right: 0;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+
+    &__track {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
+    &__progress {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    &__volume {
+      margin-bottom: 20px;
+    }
+  }
+}
