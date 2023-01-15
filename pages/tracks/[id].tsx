@@ -25,7 +25,7 @@ const CommentsPage = (props: ToggleThemeProps) => {
 export default CommentsPage
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const response = await axios.get(`${process.env.NEXT_PUBLIC_API_HOST}/tracks/` + params?.id)
+  const response = await axios.get(`http://localhost:5000/tracks/` + params?.id)
   return {
     props: {
       serverTrack: response.data,

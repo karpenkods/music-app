@@ -170,7 +170,7 @@ export const Comments = ({ serverTrack }: any) => {
             <CardMedia
               component="img"
               className={styles.comments__media}
-              image={`${process.env.NEXT_PUBLIC_API_HOST}/${track.picture}`}
+              image={`http://localhost:5000/${track.picture}`}
               alt="Track cover"
             />
           </Card>

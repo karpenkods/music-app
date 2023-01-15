@@ -69,7 +69,7 @@ export const Create: FC = () => {
     formData.append('genre', genre.value)
     formData.append('picture', picture)
     formData.append('audio', audio)
-    axios.post(`${process.env.NEXT_PUBLIC_API_HOST}/tracks`, formData)
+    axios.post(`http://localhost:5000/tracks`, formData)
     setOpenModalOver(true)
   }
 

@@ -32,7 +32,7 @@ export const ModalDelete: FC<ModalDeleteProps> = ({
 
   const delTrack = async () => {
     try {
-      await axios.delete(`${process.env.NEXT_PUBLIC_API_HOST}/tracks/${track._id}`)
+      await axios.delete(`http://localhost:5000/tracks/${track._id}`)
     } catch (e) {
       console.log(e)
     }

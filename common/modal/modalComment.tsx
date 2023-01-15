@@ -44,7 +44,7 @@ export const ModalComment: FC<ModalCommentProps> = ({
   const addComment = async () => {
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_HOST}/tracks/comment`,
+        `http://localhost:5000/tracks/comment`,
         {
           username: username.value,
           text: text.value,

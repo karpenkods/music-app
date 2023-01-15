@@ -110,7 +110,7 @@ export const Player: any | FC<TracksListProps>  = ({ tracks }: any) => {
 
   const setAudio = () => {
     if (active && asPath) {
-      audio.src = `${process.env.NEXT_PUBLIC_API_HOST}/${active.audio}`
+      audio.src = `http://localhost:5000/${active.audio}`
       audio.onloadedmetadata = () => {
         setDuration(audio.duration)
       }
@@ -124,7 +124,7 @@ export const Player: any | FC<TracksListProps>  = ({ tracks }: any) => {
     if (play) {
       audio.play()
       active
-        ? axios.post(`${process.env.NEXT_PUBLIC_API_HOST}/tracks/listen/${active?._id}`)
+        ? axios.post(`http://localhost:5000/tracks/listen/${active?._id}`)
         : null
     } else {
       audio.pause()

@@ -169,7 +169,7 @@ export const Track: FC<TrackProps> = ({ track, index, lastIndex }) => {
         <CardMedia
           component="img"
           className={styles.track__media}
-          image={`${process.env.NEXT_PUBLIC_API_HOST}/${track.picture}`}
+          image={`http://localhost:5000/${track.picture}`}
           alt="Track cover"
         />
       </Card>
