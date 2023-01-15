@@ -3,6 +3,8 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useCookies } from 'react-cookie'
 import NextNProgress from 'nextjs-progressbar'
+import { EmotionCache } from '@emotion/cache'
+import createEmotionCache from '../common/utils/createEmotionCache'
 
 import { wrapper } from '../store'
 
@@ -13,6 +15,7 @@ import { lightThemeStyles } from '../styles/theme/lightTheme'
 import { darkThemeStyles } from '../styles/theme/darkTheme'
 
 import '../styles/globals.scss'
+import { CacheProvider } from '@emotion/react'
 
 const lightTheme = createTheme(lightThemeStyles)
 
@@ -24,7 +27,14 @@ function getActiveTheme(themeMode: 'light' | 'dark') {
 
 const PREFERENCE_COOKIE_NAME = 'theme_preference'
 
-const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
+const clientSideEmotionCache = createEmotionCache();
+
+interface MyAppProps extends AppProps {
+  emotionCache?: EmotionCache;
+}
+
+const MyApp: FC<AppProps> = (props: MyAppProps) => {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const userSystemThemePreferenceDark = useMediaQuery(
     '(prefers-color-scheme: dark)',
   )
@@ -54,7 +64,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   }, [selectedTheme])
 
   return (
-    <>
+    <CacheProvider value={emotionCache}>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -63,7 +73,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
         <NextNProgress color="#d50000" height={2} showOnShallow={true}/>
         <Component {...pageProps} toggleTheme={toggleTheme} />
       </ThemeProvider>
-    </>
+    </CacheProvider>
   )
 }
 

@@ -82,6 +82,9 @@ export const Track: FC<TrackProps> = ({ track, index, lastIndex }) => {
     }
   }
 
+  console.log(track.audio);
+  
+
   return (
     <>
       <Card
