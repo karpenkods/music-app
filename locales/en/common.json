@@ -66,5 +66,6 @@
   "movePlayer": "Move player",
   "pinPlayer": "Pin player",
   "develop": "Sorry, the page you are looking for is under development",
-  "notFound": "Page not found"
+  "notFound": "Page not found",
+  "notTracks": "There are no tracks, please download"
 }

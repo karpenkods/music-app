@@ -115,7 +115,7 @@ export const Tracks: FC<TracksListProps> = ({ tracks, error }) => {
               variant="h4"
               color="primary"
             >
-              {t('nothingFound')}
+              {t('notTracks')}
             </Typography>
           )}
         </div>
